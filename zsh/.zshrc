@@ -2,9 +2,9 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/git/oh-my-zsh
+export ZSH=/home/bporter/git/oh-my-zsh
 
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="agnoster"
 
 CASE_SENSITIVE="false"      # case sensistive completion
 HYPHEN_INSENSITIVE="false"  # hyphen insensitive completion
@@ -31,5 +31,5 @@ alias ut="ssh bporter@linux.cs.utexas.edu"
 alias utg="ssh -X bporter@linux.cs.utexas.edu"
 
 export NVM_DIR="$HOME/git/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"

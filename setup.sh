@@ -2,7 +2,7 @@
 DIR=$(readlink -f "$0")
 DIRNAME=$(dirname $DIR)
 
-link ()
+link()
 {
     unlink $2
     ln -s $DIRNAME/$1 $2
