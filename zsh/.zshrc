@@ -1,7 +1,3 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
 export ZSH=/home/bporter/git/oh-my-zsh
 
 ZSH_THEME="agnoster"
@@ -25,11 +21,15 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-alias o="xdg-open"
-
-alias ut="ssh bporter@linux.cs.utexas.edu"
-alias utg="ssh -X bporter@linux.cs.utexas.edu"
-
+# nvm setup
 export NVM_DIR="$HOME/git/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# rvm setup
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# aliases
+alias o="xdg-open"
+alias ut="ssh bporter@linux.cs.utexas.edu"
+alias utg="ssh -X bporter@linux.cs.utexas.edu"

@@ -9,5 +9,7 @@ link()
 }
 
 link git/.gitconfig ~/.gitconfig
+link ruby/.irbrc    ~/.irbrc
+link ruby/.gemrc    ~/.gemrc
 link vim/.vimrc     ~/.vimrc
 link zsh/.zshrc     ~/.zshrc

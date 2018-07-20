@@ -14,7 +14,7 @@ Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-syntastic/syntastic'
+Plug 'w0rp/ale'
 
 " Languages
 Plug 'rust-lang/rust.vim'
@@ -26,20 +26,6 @@ Plug 'reedes/vim-colors-pencil'
 Plug 'romainl/Apprentice'
 
 call plug#end()
-
-" Plugin Configuration
-"     Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-" Auto commands
-"autocmd vimenter * NERDTree
-"autocmd vimenter * wincmd p
 
 " Visual
 colorscheme gruvbox
