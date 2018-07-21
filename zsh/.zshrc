@@ -1,4 +1,4 @@
-export ZSH=/home/bporter/git/oh-my-zsh
+export ZSH=$HOME/git/oh-my-zsh
 
 ZSH_THEME="agnoster"
 
@@ -26,8 +26,19 @@ export NVM_DIR="$HOME/git/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
+# pyenv setup
+export PYENV_ROOT="$HOME/git/pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 # rvm setup
-export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$PATH:$HOME/git/rvm/bin"
+if [ -s "$HOME/.rvmrc" ]; then
+    source "$HOME/.rvmrc"
+fi
+if [ -s "${rvm_path-$HOME/.rvm}/scripts/rvm" ]; then
+    source "${rvm_path-$HOME/.rvm}/scripts/rvm"
+fi
 
 # aliases
 alias o="xdg-open"
