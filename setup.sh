@@ -28,8 +28,8 @@ clone https://github.com/robbyrussell/oh-my-zsh $HOME/git/oh-my-zsh
 clone https://github.com/rvm/rvm                $HOME/git/rvm
 
 link git/.gitconfig ~/.gitconfig
-link ruby/.irbrc    ~/.irbrc
 link ruby/.gemrc    ~/.gemrc
+link ruby/.irbrc    ~/.irbrc
 link ruby/.rvmrc    ~/.rvmrc
 link vim/.vimrc     ~/.vimrc
 link zsh/.zshrc     ~/.zshrc

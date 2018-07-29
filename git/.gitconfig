@@ -4,7 +4,33 @@
     email = bporter816@gmail.com
 [core]
     editor = vim
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
 [color "status"]
     added = green bold
     changed = yellow bold
     untracked = red bold
+[alias]
+    a = add
+    aa = add --all
+
+    c = commit
+    ca = commit -a
+    cm = commit -m
+    cam = commit -am
+
+    cl = clone
+
+    d = diff
+    dt = difftool
+
+    l = log --oneline
+    ll = log
+
+    pl = pull
+
+    ps = push
+
+    s = status

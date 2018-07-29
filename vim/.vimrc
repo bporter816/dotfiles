@@ -1,13 +1,16 @@
 set nocompatible
 
-" Plugin Management
+" Plugins
 call plug#begin('~/.vim/plugged')
 
 " General
+Plug 'godlygeek/tabular'
 Plug 'majutsushi/tagbar'
+Plug 'plasticboy/vim-markdown'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
 
 " Languages
@@ -15,18 +18,25 @@ Plug 'rust-lang/rust.vim'
 
 " Color schemes
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'altercation/vim-colors-solarized'
 Plug 'morhetz/gruvbox'
 Plug 'reedes/vim-colors-pencil'
 Plug 'romainl/Apprentice'
 
 call plug#end()
 
+" Plugin configuration
+let g:airline_theme = 'solarized'
+let g:airline_solarized_bg = 'dark'
+
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_math = 1
+
 " Visual
-colorscheme gruvbox
-"colorscheme PaperColor
-"colorscheme apprentice
+syntax enable
 set background=dark
-set t_Co=256
+colorscheme solarized
 
 set textwidth=80
 set colorcolumn=81
