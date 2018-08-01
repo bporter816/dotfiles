@@ -38,8 +38,8 @@ syntax enable
 set background=dark
 colorscheme solarized
 
-set textwidth=80
-set colorcolumn=81
+set textwidth=120
+set colorcolumn=121
 set number
 set cursorline
 
@@ -57,3 +57,5 @@ set smarttab
 set tabstop=4
 set shiftwidth=4
 
+autocmd FileType html setlocal tabstop=2 shiftwidth=2
+autocmd FileType plaintex setlocal tabstop=2 shiftwidth=2

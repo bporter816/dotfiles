@@ -21,6 +21,9 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+# java setup
+export PATH="/usr/java/jdk-10.0.2/bin:$PATH"
+
 # nvm setup
 export NVM_DIR="$HOME/git/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
