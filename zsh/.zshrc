@@ -34,14 +34,10 @@ export PYENV_ROOT="$HOME/git/pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-# rvm setup
-export PATH="$PATH:$HOME/git/rvm/bin"
-if [ -s "$HOME/.rvmrc" ]; then
-    source "$HOME/.rvmrc"
-fi
-if [ -s "${rvm_path-$HOME/.rvm}/scripts/rvm" ]; then
-    source "${rvm_path-$HOME/.rvm}/scripts/rvm"
-fi
+# rbenv setup
+export RBENV_ROOT="$HOME/git/rbenv"
+export PATH="$RBENV_ROOT/bin:$PATH"
+eval "$(rbenv init -)"
 
 # aliases
 alias o="xdg-open"
