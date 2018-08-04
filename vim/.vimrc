@@ -26,8 +26,9 @@ Plug 'romainl/Apprentice'
 call plug#end()
 
 " Plugin configuration
-let g:airline_theme = 'solarized'
+let g:airline_powerline_fonts = 1
 let g:airline_solarized_bg = 'dark'
+let g:airline_theme = 'solarized'
 
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_frontmatter = 1
