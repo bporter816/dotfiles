@@ -4,9 +4,7 @@ set nocompatible
 call plug#begin('~/.vim/plugged')
 
 " General
-Plug 'godlygeek/tabular'
 Plug 'majutsushi/tagbar'
-Plug 'plasticboy/vim-markdown'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
@@ -14,7 +12,13 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
 
 " Languages
-Plug 'rust-lang/rust.vim'
+Plug 'rust-lang/rust.vim'      " rust
+
+Plug 'pangloss/vim-javascript' " javascript
+Plug 'mxw/vim-jsx'             " jsx
+
+Plug 'godlygeek/tabular'       " markdown
+Plug 'plasticboy/vim-markdown' " markdown
 
 " Color schemes
 Plug 'NLKNguyen/papercolor-theme'
