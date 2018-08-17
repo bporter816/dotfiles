@@ -17,6 +17,7 @@ HIST_STAMPS="mm/dd/yyyy"
 
 plugins=(
   git
+  last-working-dir
 )
 
 source $ZSH/oh-my-zsh.sh

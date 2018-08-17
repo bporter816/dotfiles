@@ -16,10 +16,15 @@
     a = add
     aa = add --all
 
+    b = branch
+
     c = commit
     ca = commit -a
     cm = commit -m
     cam = commit -am
+
+    ch = checkout
+    chb = checkout -b
 
     cl = clone
 
@@ -32,5 +37,8 @@
     pl = pull
 
     ps = push
+
+    re = reset
+    rh = reset HEAD
 
     s = status
