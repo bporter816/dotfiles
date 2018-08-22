@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 DIR=$(readlink -f "$0")
 DIRNAME=$(dirname $DIR)
@@ -7,7 +7,7 @@ clone() {
     if [ -d $2 ]; then
         echo "$2 already exists"
     else
-        git clone ssh://git@github.com/$1 $2
+        git clone $1 $2
     fi
 }
 
@@ -21,22 +21,22 @@ link_manual() {
     ln -s $1 $2
 }
 
-clone creationix/nvm         $HOME/git/nvm
-clone junegunn/vim-plug      $HOME/git/vim-plug
-clone pyenv/pyenv            $HOME/git/pyenv
-clone rbenv/rbenv            $HOME/git/rbenv
-clone rbenv/ruby-build       $HOME/git/ruby-build
-clone robbyrussell/oh-my-zsh $HOME/git/oh-my-zsh
+# clone repos from repos.txt
+while read -r repo dest; do
+    eval dest=$dest # expand $HOME
+    clone $repo $dest
+done < repos.txt
 
+# symlink files
 link git/.gitconfig ~/.gitconfig
 link ruby/.gemrc    ~/.gemrc
 link ruby/.irbrc    ~/.irbrc
 link vim/.vimrc     ~/.vimrc
 link zsh/.zshrc     ~/.zshrc
 
+# create rbenv plugins folder
 mkdir -p $HOME/git/rbenv/plugins
 
+# create vim-plug and ruby-build symlinks
 link_manual $HOME/git/vim-plug/plug.vim $HOME/.vim/autoload/plug.vim
 link_manual $HOME/git/ruby-build        $HOME/git/rbenv/plugins/ruby-build
-
-source zsh/.zshrc

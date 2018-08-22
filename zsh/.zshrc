@@ -22,6 +22,14 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+# scripts setup
+if [ -d $HOME/git/dotfiles/scripts ]; then
+    for file in $HOME/git/dotfiles/scripts/*.sh; do
+        echo "sourcing $file"
+        source $file
+    done
+fi
+
 # java setup
 export PATH="/usr/java/jdk-10.0.2/bin:$PATH"
 
