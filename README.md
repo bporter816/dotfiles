@@ -19,3 +19,4 @@ The setup script does the following:
 The following assumptions are made about the system:
 - `zsh` is installed and is the default shell
 - Oracle JDK 10.0.2 is installed at `/usr/java/jdk-10.0.2/`
+- golang 1.11 is installed at `/usr/local/go-1.11/`
