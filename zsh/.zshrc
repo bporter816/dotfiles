@@ -52,7 +52,11 @@ export RBENV_ROOT="$HOME/git/rbenv"
 export PATH="$RBENV_ROOT/bin:$PATH"
 eval "$(rbenv init -)"
 
+# vim-superman setup
+export PATH="$PATH:$HOME/.vim/plugged/vim-superman/bin"
+
 # aliases
+alias man="vman"
 alias o="xdg-open"
 alias ut="ssh bporter@linux.cs.utexas.edu"
 alias utg="ssh -X bporter@linux.cs.utexas.edu"

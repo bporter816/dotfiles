@@ -10,8 +10,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
+Plug 'jez/vim-superman'
 
 " Languages
+Plug 'vim-latex/vim-latex'     " latex
+
 Plug 'rust-lang/rust.vim'      " rust
 
 Plug 'pangloss/vim-javascript' " javascript
