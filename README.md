@@ -8,6 +8,11 @@ Installation instructions:
 4. Run `source zsh/.zshrc`.
 5. Note that `git/.gitconfig` is configured with my git identity.
 
+Setup for dependencies:
+1. Download and install Oracle JDK 10.0.2 to `/usr/java/jdk-10.0.2/`
+2. Download and install Go 1.11 to `/usr/local/go-1.11/`
+3. Download a `.kattisrc` file from [https://icpc.kattis.com/download/kattisrc] and save it at `~/.kattisrc`
+
 The setup script does the following:
 - clones several projects and tools I use for development, saving them as
   subdirectories of `~/git/`
@@ -19,4 +24,4 @@ The setup script does the following:
 The following assumptions are made about the system:
 - `zsh` is installed and is the default shell
 - Oracle JDK 10.0.2 is installed at `/usr/java/jdk-10.0.2/`
-- golang 1.11 is installed at `/usr/local/go-1.11/`
+- Go 1.11 is installed at `/usr/local/go-1.11/`

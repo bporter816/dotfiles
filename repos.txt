@@ -1,4 +1,5 @@
 ssh://git@github.com/creationix/nvm         $HOME/git/nvm
+ssh://git@github.com/Kattis/kattis-cli      $HOME/git/kattis-cli
 ssh://git@github.com/junegunn/vim-plug      $HOME/git/vim-plug
 ssh://git@github.com/pyenv/pyenv            $HOME/git/pyenv
 ssh://git@github.com/rbenv/rbenv            $HOME/git/rbenv

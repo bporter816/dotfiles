@@ -1,6 +1,6 @@
 export ZSH=$HOME/git/oh-my-zsh
 
-ZSH_THEME="agnoster"
+ZSH_THEME="ys"
 
 CASE_SENSITIVE="false"      # case sensistive completion
 HYPHEN_INSENSITIVE="false"  # hyphen insensitive completion
@@ -54,6 +54,11 @@ eval "$(rbenv init -)"
 
 # vim-superman setup
 export PATH="$PATH:$HOME/.vim/plugged/vim-superman/bin"
+
+# kattis-cli setup
+export KATTIS_ROOT="$HOME/git/kattis-cli"
+alias ks="python3 $KATTIS_ROOT/submit.py"
+
 
 # aliases
 alias man="vman"
