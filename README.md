@@ -20,8 +20,3 @@ The setup script does the following:
   __overwriting any existing dotfiles that share a file path with a file linked
   by the script__
 - creates symlinks for `vim-plug` and `ruby-build`
-
-The following assumptions are made about the system:
-- `zsh` is installed and is the default shell
-- Oracle JDK 10.0.2 is installed at `/usr/java/jdk-10.0.2/`
-- Go 1.11 is installed at `/usr/local/go-1.11/`
