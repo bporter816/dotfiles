@@ -29,6 +29,7 @@ done < repos.txt
 
 # symlink files
 link git/.gitconfig ~/.gitconfig
+link npm/.npmrc     ~/.npmrc
 link ruby/.gemrc    ~/.gemrc
 link ruby/.irbrc    ~/.irbrc
 link vim/.vimrc     ~/.vimrc
