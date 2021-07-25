@@ -1,17 +1,9 @@
-[user]
-    user = bporter816
-    name = Benjamin Porter
-    email = bporter816@gmail.com
-[core]
-    editor = vim
-[diff]
-    tool = vimdiff
-[difftool]
-    prompt = false
-[color "status"]
-    added = green bold
-    changed = yellow bold
-    untracked = red bold
+[includeIf "gitdir:~/personal/"]
+    path = ~/.gitconfig-personal
+
+[includeIf "gitdir:~/work/"]
+    path = ~/.gitconfig-work
+
 [alias]
     a = add
     aa = add --all
@@ -19,9 +11,7 @@
     b = branch
 
     c = commit
-    ca = commit -a
     cm = commit -m
-    cam = commit -am
 
     ch = checkout
     chb = checkout -b
@@ -29,6 +19,7 @@
     cl = clone
 
     d = diff
+    ds = diff --staged
     dt = difftool
 
     l = log --oneline

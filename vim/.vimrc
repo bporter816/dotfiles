@@ -3,67 +3,38 @@ set nocompatible
 " Plugins
 call plug#begin('~/.vim/plugged')
 
-" General
-Plug 'majutsushi/tagbar'
-Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-fugitive'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'w0rp/ale'
-Plug 'jez/vim-superman'
-
-" Languages
-Plug 'vim-latex/vim-latex'     " latex
-
-Plug 'rust-lang/rust.vim'      " rust
-
-Plug 'pangloss/vim-javascript' " javascript
-Plug 'mxw/vim-jsx'             " jsx
-
-Plug 'godlygeek/tabular'       " markdown
-Plug 'plasticboy/vim-markdown' " markdown
-
-" Color schemes
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'altercation/vim-colors-solarized'
+" Colorschemes
 Plug 'morhetz/gruvbox'
-Plug 'reedes/vim-colors-pencil'
-Plug 'romainl/Apprentice'
+
+" Language support
+Plug 'hashivim/vim-terraform'
 
 call plug#end()
 
-" Plugin configuration
-let g:airline_powerline_fonts = 1
-let g:airline_solarized_bg = 'dark'
-let g:airline_theme = 'solarized'
-
-let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_frontmatter = 1
-let g:vim_markdown_math = 1
-
 " Visual
-syntax enable
-set background=dark
-colorscheme solarized
+colorscheme gruvbox
+autocmd BufRead,BufNewFile *.hcl set filetype=terraform
 
 set textwidth=120
 set colorcolumn=121
 set number
+set relativenumber
 set cursorline
 
 " Keybindings
-let mapleader=","
-nmap ; :
+let mapleader=" "
 imap kj <Esc>
-nmap <F2> :set spell
-nmap <F8> :TagbarToggle<CR>
-nmap ZZ :xa<CR>
+
+" Easier pane switching
+map <C-h> <C-W>h
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-l> <C-W>l
+
+command Q Rexplore
 
 " Indentation
 set expandtab
 set smarttab
 set tabstop=4
 set shiftwidth=4
-
-autocmd FileType html setlocal tabstop=2 shiftwidth=2
-autocmd FileType plaintex setlocal tabstop=2 shiftwidth=2
