@@ -1,4 +1,4 @@
-# Pick line $1 from input
+# Pick a line
 function line() {
     sed -n "$1p"
 }
@@ -8,4 +8,9 @@ function fix-newlines() {
     for i in $1; do
         tail -c 1 $i | od -ta | grep -q "nl" || echo >> $i
     done
+}
+
+# Get the last column
+function lc() {
+    awk '{print $NF}'
 }

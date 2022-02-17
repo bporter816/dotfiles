@@ -9,6 +9,7 @@
     aa = add --all
 
     b = branch
+    bl = blame
 
     c = commit
     cm = commit -m
@@ -28,8 +29,14 @@
     pl = pull
 
     ps = push
+    psu = push -u origin HEAD
 
+    rb = rebase
     re = reset
     rh = reset HEAD
 
     s = status
+
+    st = stash
+
+    wt = worktree

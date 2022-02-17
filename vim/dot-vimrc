@@ -8,6 +8,7 @@ Plug 'morhetz/gruvbox'
 
 " Language support
 Plug 'hashivim/vim-terraform'
+Plug 'udalov/kotlin-vim'
 
 call plug#end()
 
