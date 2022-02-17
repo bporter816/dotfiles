@@ -20,7 +20,7 @@ function tgt() {
 
 # Copy a single file to multiple destinations
 function cpm() {
-    echo $@[1,-2] | xargs -n 1 cp -v $@[-1]
+    echo $@[2,-1] | xargs -n 1 cp -v $@[1]
 }
 
 # General
