@@ -9,12 +9,19 @@ Plug 'morhetz/gruvbox'
 " Language support
 Plug 'hashivim/vim-terraform'
 Plug 'udalov/kotlin-vim'
+Plug 'mustache/vim-mustache-handlebars'
+
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
 
 call plug#end()
 
 " Visual
 colorscheme gruvbox
 autocmd BufRead,BufNewFile *.hcl set filetype=terraform
+
+set re=0
 
 set textwidth=120
 set colorcolumn=121
@@ -24,13 +31,23 @@ set cursorline
 
 " Keybindings
 let mapleader=" "
-imap kj <Esc>
+imap kj <esc>
 
 " Easier pane switching
 map <C-h> <C-W>h
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-l> <C-W>l
+
+" Keep cursor centered
+nnoremap n nzz
+nnoremap N Nzz
+
+" Moving lines around
+nnoremap <leader>k :m .-2<CR>==
+nnoremap <leader>j :m .+1<CR>==
+inoremap <C-k> <esc>:m .-2<CR>==
+inoremap <C-j> <esc>:m .+1<CR>==
 
 command Q Rexplore
 

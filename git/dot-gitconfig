@@ -26,6 +26,10 @@
     l = log --oneline
     ll = log
 
+    lsm = ls-files --modified --exclude-standard
+    lsu = ls-files --others --exclude-standard
+    lss = diff --cached --name-only
+
     pl = pull
 
     ps = push
@@ -40,3 +44,6 @@
     st = stash
 
     wt = worktree
+
+[core]
+	excludesfile = ~/.gitignore
