@@ -43,6 +43,10 @@ map <C-l> <C-W>l
 nnoremap n nzz
 nnoremap N Nzz
 
+" Navigate through wrapped lines
+nnoremap <expr> j v:count ? 'j' : 'gj'
+nnoremap <expr> k v:count ? 'k' : 'gk'
+
 " Moving lines around
 nnoremap <leader>k :m .-2<CR>==
 nnoremap <leader>j :m .+1<CR>==
