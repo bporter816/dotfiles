@@ -1,26 +1,14 @@
 eval "$(pyenv init --path)"
+export EDITOR="vim"
 
-# Kubernetes
-alias k="kubectl"
-
-# Terraform
-alias tf="terraform"
-alias tg="terragrunt"
-alias tfu="terraenv terraform use"
-
-# grep for targets for terraform
-function tft() {
-    terraform state list | rg $2 | awk '{print "'\''"$0"'\''"}' | awk '$0="-target="$0' | xargs -d'\n' -o -r terraform $1
+# Pick a line
+function line() {
+    sed -n "$1p"
 }
 
-# grep for targets for terragrunt
-function tgt() {
-    terragrunt state list | rg $2 | awk '$0="-target="$0' | xargs -d'\n' -o -r terragrunt $1
-}
-
-# Copy a single file to multiple destinations
-function cpm() {
-    echo $@[2,-1] | xargs -n 1 cp -v $@[1]
+# Get the last column
+function lc() {
+    awk '{print $NF}'
 }
 
 # Copy a file and change to the directory to where it was copied
@@ -28,5 +16,9 @@ function cpcd() {
     cp $1 $2 && cd $2
 }
 
-# General
-export EDITOR="vim"
+# Add trailing newlines to files that don't have them
+function fix-newlines() {
+    for i in $1; do
+        tail -c 1 $i | od -ta | grep -q "nl" || echo >> $i
+    done
+}
