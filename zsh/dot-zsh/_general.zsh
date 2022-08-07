@@ -11,6 +11,11 @@ function lc() {
     awk '{print $NF}'
 }
 
+# Copy a single file to multiple destinations
+function cpm() {
+    echo $@[2,-1] | xargs -n 1 cp -v $@[1]
+}
+
 # Copy a file and change to the directory to where it was copied
 function cpcd() {
     cp $1 $2 && cd $2

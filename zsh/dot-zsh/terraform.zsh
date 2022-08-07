@@ -11,8 +11,3 @@ function tft() {
 function tgt() {
     terragrunt state list | rg $2 | awk '$0="-target="$0' | xargs -d'\n' -o -r terragrunt $1
 }
-
-# Copy a single file to multiple destinations
-function cpm() {
-    echo $@[2,-1] | xargs -n 1 cp -v $@[1]
-}
