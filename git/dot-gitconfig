@@ -7,8 +7,12 @@
 [alias]
     a = add
     aa = add --all
+    ar = "!f() { git lsd | grep $1 | xargs git add; }; f" # add files matching regex
+    amr = "!f() { git lsm | grep $1 | xargs git add; }; f" # add modified files matching regex
+    aur = "!f() { git lsu | grep $1 | xargs git add; }; f" # add untracked files matching regex
 
-    br = branch
+    b = branch
+    br = "!f() { git branch | grep $1 | head -n 1 | awk '{print $NF}' | xargs git checkout; }; f" # checkout branch by regex search
     bl = blame
 
     c = commit
@@ -17,8 +21,11 @@
 
     ch = checkout
     chb = checkout -b
+    chm = "!f() { git checkout $(git db); }; f" # checkout default branch
 
     cl = clone
+
+    db = "!f() { git remote show origin | grep 'HEAD branch' | awk '{print $NF}'; }; f" # get the default branch
 
     d = diff
     ds = diff --staged
@@ -27,8 +34,9 @@
     l = log --oneline
     ll = log
 
-    lsm = ls-files --modified --exclude-standard
-    lsu = ls-files --others --exclude-standard
+    lsm = ls-files --modified --exclude-standard # list modified files
+    lsu = ls-files --others --exclude-standard # list untracked files
+    lsd = ls-files --modified --others --exclude-standard # list modified and untracked files
     lss = diff --cached --name-only
 
     pl = pull
@@ -37,12 +45,19 @@
     psu = push -u origin HEAD
 
     rb = rebase
+    rbi = "!f() { git rebase -i HEAD~$1; }; f" # interactive rebase with the given number of commits
+    rba = "!f() { git rbi $(git rev-list --count HEAD ^$(git db)); }; f" # interactive rebase with all new commits on this branch
+    rbm = "!f() { git rebase $(git db); }; f" # rebase on the default branch
 
     re = reset
     reh = reset HEAD
 
+    rmr = "!f() { git lsu | grep $1 | xargs rm; }; f" # remove untracked files matching regex
+
     rs = restore
     rss = restore --staged
+    rsr = "!f() { git lsm | grep $1 | xargs git rs; }; f" # restore files matching regex
+    rssr = "!f() { git lss | grep $1 | xargs git rss; }; f" # restore staged files matching regex
 
     s = status
 
