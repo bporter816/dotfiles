@@ -18,13 +18,14 @@ Plug 'evanleck/vim-svelte', {'branch': 'main'}
 call plug#end()
 
 " Visual
+set bg=dark
 colorscheme gruvbox
 autocmd BufRead,BufNewFile *.hcl set filetype=terraform
 
-set re=0
+" Automatically select regex engine
+set regexpengine=0
 
-set textwidth=120
-set colorcolumn=121
+set colorcolumn=81,121
 set number
 set relativenumber
 set cursorline
@@ -32,6 +33,10 @@ set cursorline
 " Keybindings
 let mapleader=" "
 imap kj <esc>
+
+" Switch between open files
+map <leader>h :N<CR>
+map <leader>l :n<CR>
 
 " Easier pane switching
 map <C-h> <C-W>h
