@@ -6,6 +6,11 @@ function line() {
     sed -n "$1p"
 }
 
+# Pick a line range
+function lines() {
+    sed -n "$1,$2p"
+}
+
 # Get the last column
 function lc() {
     awk '{print $NF}'
