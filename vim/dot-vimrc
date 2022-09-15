@@ -6,6 +6,10 @@ call plug#begin('~/.vim/plugged')
 " Colorschemes
 Plug 'morhetz/gruvbox'
 
+" Utils
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+
 " Language support
 Plug 'hashivim/vim-terraform'
 Plug 'udalov/kotlin-vim'
@@ -33,6 +37,8 @@ set cursorline
 " Keybindings
 let mapleader=" "
 imap kj <esc>
+
+map <leader>g :GBrowse<CR>
 
 " Switch between open files
 map <leader>h :N<CR>
