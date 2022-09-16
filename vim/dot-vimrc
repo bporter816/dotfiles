@@ -38,7 +38,8 @@ set cursorline
 let mapleader=" "
 imap kj <esc>
 
-map <leader>g :GBrowse<CR>
+map <leader>gh :GBrowse<CR>
+map <leader>gb :Git blame<CR>
 
 " Switch between open files
 map <leader>h :N<CR>
