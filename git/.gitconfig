@@ -1,8 +1,8 @@
 [includeIf "gitdir:~/personal/"]
-    path = ~/.gitconfig-personal
+    path = ~/personal/.gitconfig
 
 [includeIf "gitdir:~/work/"]
-    path = ~/.gitconfig-work
+    path = ~/work/.gitconfig
 
 [alias]
     a = add

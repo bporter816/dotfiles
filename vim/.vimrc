@@ -26,6 +26,9 @@ set bg=dark
 colorscheme gruvbox
 autocmd BufRead,BufNewFile *.hcl set filetype=terraform
 
+" Statusline
+set laststatus=2
+
 " Automatically select regex engine
 set regexpengine=0
 
@@ -38,8 +41,8 @@ set cursorline
 let mapleader=" "
 imap kj <esc>
 
-map <leader>gh :GBrowse<CR>
-map <leader>gb :Git blame<CR>
+map <leader>g :GBrowse<CR>
+map <leader>b :Git blame<CR>
 
 " Switch between open files
 map <leader>h :N<CR>
