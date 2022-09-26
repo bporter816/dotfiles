@@ -35,6 +35,8 @@
     l = log --oneline
     ll = log
 
+
+    lsc = diff --name-only --diff-filter=U # list files with conflicts
     lsm = ls-files --modified --exclude-standard # list modified files
     lsu = ls-files --others --exclude-standard # list untracked files
     lsd = ls-files --modified --others --exclude-standard # list modified and untracked files
@@ -59,6 +61,8 @@
     rss = restore --staged
     rsr = "!f() { git lsm | grep $1 | xargs git rs; }; f" # restore files matching regex
     rssr = "!f() { git lss | grep $1 | xargs git rss; }; f" # restore staged files matching regex
+
+    rv = revert
 
     s = status
 

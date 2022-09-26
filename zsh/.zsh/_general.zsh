@@ -32,3 +32,8 @@ function fix-newlines() {
         tail -c 1 $i | od -ta | grep -q "nl" || echo >> $i
     done
 }
+
+# Like xargs, but with stdin instead of args
+function xin() {
+    while read -r line; do echo $line | tr -d '\n' | $@; done
+}
