@@ -37,3 +37,8 @@ function fix-newlines() {
 function xin() {
     while read -r line; do echo $line | tr -d '\n' | $@; done
 }
+
+# Prefix each line
+function pre() {
+    sed "s/^/$1/"
+}
