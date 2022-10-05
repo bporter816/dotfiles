@@ -28,14 +28,12 @@ function cpcd() {
 
 # Add trailing newlines to files that don't have them
 function fix-newlines() {
-    for i in $1; do
-        tail -c 1 $i | od -ta | grep -q "nl" || echo >> $i
-    done
+    for i in $1; do tail -c 1 $i | od -ta | grep -q "nl" || (echo "Appending newline to $i" && echo >> $i); done
 }
 
 # Like xargs, but with stdin instead of args
 function xin() {
-    while read -r line; do echo $line | tr -d '\n' | $@; done
+    while read -r line; do echo -n $line | $@; done
 }
 
 # Prefix each line
