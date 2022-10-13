@@ -14,6 +14,7 @@ Plug 'tpope/vim-rhubarb'
 Plug 'hashivim/vim-terraform'
 Plug 'udalov/kotlin-vim'
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'dag/vim-fish'
 
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
