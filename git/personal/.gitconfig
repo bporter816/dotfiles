@@ -2,9 +2,3 @@
     user = bporter816
     name = Benjamin Porter
     email = bporter816@gmail.com
-[core]
-    editor = vim
-[diff]
-    tool = vimdiff
-[difftool]
-    prompt = false

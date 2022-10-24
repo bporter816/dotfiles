@@ -71,7 +71,10 @@
     wt = worktree
 
 [core]
+    editor = nvim
 	excludesfile = ~/.gitignore
+[difftool]
+    prompt = false
 [init]
     defaultBranch = main
 [status]

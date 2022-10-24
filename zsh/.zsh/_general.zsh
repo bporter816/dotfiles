@@ -1,5 +1,5 @@
 eval "$(pyenv init --path)"
-export EDITOR="vim"
+export EDITOR="nvim"
 
 # Pick a line
 function line() {
