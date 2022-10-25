@@ -4,6 +4,9 @@ local options = {
     cursorline = true,
     colorcolumn = "81,121",
 
+    termguicolors = true,
+    background = "dark",
+
     splitbelow = true,
     splitright = true,
 
