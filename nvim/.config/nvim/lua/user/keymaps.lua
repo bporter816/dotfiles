@@ -19,10 +19,15 @@ keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- resizing
-keymap("n", "<C-Up>", ":resize +2<CR>", opts)
-keymap("n", "<C-Down>", ":resize -2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+keymap("n", "<leader><Up>", ":resize +2<CR>", opts)
+keymap("n", "<leader><Down>", ":resize -2<CR>", opts)
+keymap("n", "<leader><Left>", ":vertical resize -2<CR>", opts)
+keymap("n", "<leader><Right>", ":vertical resize +2<CR>", opts)
 
-keymap("n", "<leader>e", ":Lex 30<CR>", opts)  -- toggle file explorer
-keymap("n", "<leader>r", ":set relativenumber!<CR>", opts)
+-- swap adjacent lines
+keymap("n", "<leader>k", ":m .-2<CR>==", opts)
+keymap("n", "<leader>j", ":m .+1<CR>==", opts)
+
+-- misc
+keymap("n", "<leader>e", ":Lex 30<CR>", opts)              -- toggle file explorer
+keymap("n", "<leader>r", ":set relativenumber!<CR>", opts) -- toggle relativenumber
