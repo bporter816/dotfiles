@@ -31,3 +31,5 @@ keymap("n", "<leader>j", ":m .+1<CR>==", opts)
 -- misc
 keymap("n", "<leader>e", ":Lex 30<CR>", opts)              -- toggle file explorer
 keymap("n", "<leader>r", ":set relativenumber!<CR>", opts) -- toggle relativenumber
+keymap("n", "<leader>q", ":Rexplore<CR>", opts)
+keymap("n", "<leader>nh", ":nohl<CR>", opts)
