@@ -28,6 +28,10 @@ keymap("n", "<leader><Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<leader>k", ":m .-2<CR>==", opts)
 keymap("n", "<leader>j", ":m .+1<CR>==", opts)
 
+-- git
+keymap("n", "<leader>g", ":GBrowse<CR>", opts)
+keymap("n", "<leader>b", ":Git blame<CR>", opts)
+
 -- misc
 keymap("n", "<leader>e", ":Lex 30<CR>", opts)              -- toggle file explorer
 keymap("n", "<leader>r", ":set relativenumber!<CR>", opts) -- toggle relativenumber

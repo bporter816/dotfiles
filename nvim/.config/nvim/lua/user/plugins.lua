@@ -19,6 +19,7 @@ return packer.startup(function(use)
 
     -- colorschemes
     use { "ellisonleao/gruvbox.nvim" }
+    use { "folke/tokyonight.nvim" }
 
     -- cmp
     use { "hrsh7th/nvim-cmp" }
@@ -30,4 +31,8 @@ return packer.startup(function(use)
     -- snippets
     use { "L3MON4D3/LuaSnip" }
     use { "rafamadriz/friendly-snippets" }
+
+    -- git
+    use { "tpope/vim-fugitive" }
+    use { "tpope/vim-rhubarb" }
 end)
