@@ -10,4 +10,6 @@ if status is-interactive
     abbr -a tf terraform
     abbr -a tg terragrunt
     abbr -a vi nvim
+
+    zoxide init fish | source
 end
