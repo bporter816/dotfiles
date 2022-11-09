@@ -12,7 +12,7 @@
     aur = "!f() { git lsu | grep $1 | xargs git add; }; f" # add untracked files matching regex
 
     b = branch
-    br = "!f() { git branch | grep $1 | head -n 1 | awk '{print $NF}' | xargs git checkout; }; f" # checkout branch by regex search
+    br = "!f() { git branch | awk '{print $NF}' | fzf --preview 'git log --color=always {}' | xargs -r git checkout; }; f" # checkout branch with fzf
     bl = blame
 
     c = commit
@@ -43,6 +43,9 @@
     lss = diff --cached --name-only
 
     pl = pull
+
+    pr = "!f() { gh pr list | fzf --preview 'gh pr view {1}' | awk '{print $1}' | xargs -r gh pr checkout; }; f" # checkout a github PR with fzf
+    prm = "!f() { gh pr list --author bporter816 | fzf --preview 'gh pr view {1}' | awk '{print $1}' | xargs -r gh pr checkout; }; f" # checkout a github PR with fzf
 
     ps = push
     psu = push -u origin HEAD
