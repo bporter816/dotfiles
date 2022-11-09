@@ -18,7 +18,7 @@ return packer.startup(function(use)
     use { "wbthomason/packer.nvim" }
 
     -- colorschemes
-    use { "ellisonleao/gruvbox.nvim" }
+    use { "morhetz/gruvbox" }
     use { "folke/tokyonight.nvim" }
 
     -- cmp
