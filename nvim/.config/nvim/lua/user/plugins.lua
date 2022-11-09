@@ -20,6 +20,7 @@ return packer.startup(function(use)
     -- colorschemes
     use { "morhetz/gruvbox" }
     use { "folke/tokyonight.nvim" }
+    use { "NLKNguyen/papercolor-theme" }
 
     -- cmp
     use { "hrsh7th/nvim-cmp" }
