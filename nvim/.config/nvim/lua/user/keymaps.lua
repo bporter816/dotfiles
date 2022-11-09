@@ -32,6 +32,9 @@ keymap("n", "<leader>j", ":m .+1<CR>==", opts)
 keymap("n", "<leader>g", ":GBrowse<CR>", opts)
 keymap("n", "<leader>b", ":Git blame<CR>", opts)
 
+-- fzf
+keymap("n", "<leader>f", ":Files<CR>", opts)
+
 -- misc
 keymap("n", "<leader>e", ":Lex 30<CR>", opts)              -- toggle file explorer
 keymap("n", "<leader>r", ":set relativenumber!<CR>", opts) -- toggle relativenumber

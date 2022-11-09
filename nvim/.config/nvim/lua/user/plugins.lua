@@ -32,6 +32,10 @@ return packer.startup(function(use)
     use { "L3MON4D3/LuaSnip" }
     use { "rafamadriz/friendly-snippets" }
 
+    -- utils
+    use { "junegunn/fzf" }
+    use { "junegunn/fzf.vim" }
+
     -- git
     use { "tpope/vim-fugitive" }
     use { "tpope/vim-rhubarb" }

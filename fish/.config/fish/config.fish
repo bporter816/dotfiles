@@ -12,4 +12,11 @@ if status is-interactive
     abbr -a vi nvim
 
     zoxide init fish | source
+
+    switch (uname)
+        case Linux
+            # homebrew path
+            eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+    end
+
 end
