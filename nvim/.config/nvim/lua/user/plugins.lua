@@ -22,6 +22,9 @@ return packer.startup(function(use)
     use { "folke/tokyonight.nvim" }
     use { "NLKNguyen/papercolor-theme" }
 
+    -- languages
+    use { "hashivim/vim-terraform" }
+
     -- cmp
     use { "hrsh7th/nvim-cmp" }
     use { "hrsh7th/cmp-buffer" }
