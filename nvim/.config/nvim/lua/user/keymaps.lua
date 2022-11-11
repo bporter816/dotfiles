@@ -33,7 +33,7 @@ keymap("n", "<leader>g", ":GBrowse<CR>", opts)
 keymap("n", "<leader>b", ":Git blame<CR>", opts)
 
 -- fzf
-keymap("n", "<leader>f", ":Files<CR>", opts)
+keymap("n", "<leader>ff", ":Files<CR>", opts)
 keymap("n", "<leader>fh", ":History<CR>", opts)
 keymap("n", "<leader>fb", ":Buffers<CR>", opts)
 keymap("n", "<leader>fr", ":Rg<CR>", opts)
