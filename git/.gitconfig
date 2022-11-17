@@ -7,9 +7,9 @@
 [alias]
     a = add
     aa = add --all
-    ar = "!f() { git lsd | grep $1 | xargs git add; }; f" # add files matching regex
-    amr = "!f() { git lsm | grep $1 | xargs git add; }; f" # add modified files matching regex
-    aur = "!f() { git lsu | grep $1 | xargs git add; }; f" # add untracked files matching regex
+    ar = "!f() { git lsd | grep $1 | xargs -r git add; }; f" # add files matching regex
+    amr = "!f() { git lsm | grep $1 | xargs -r git add; }; f" # add modified files matching regex
+    aur = "!f() { git lsu | grep $1 | xargs -r git add; }; f" # add untracked files matching regex
 
     b = branch
     br = "!f() { git branch | awk '{print $NF}' | fzf --preview 'git log --color=always {}' | xargs -r git checkout; }; f" # checkout branch with fzf
@@ -58,12 +58,12 @@
     re = reset
     reh = reset HEAD
 
-    rmr = "!f() { git lsu | grep $1 | xargs rm; }; f" # remove untracked files matching regex
+    rmr = "!f() { git lsu | grep $1 | xargs -r rm; }; f" # remove untracked files matching regex
 
     rs = restore
     rss = restore --staged
-    rsr = "!f() { git lsm | grep $1 | xargs git rs; }; f" # restore files matching regex
-    rssr = "!f() { git lss | grep $1 | xargs git rss; }; f" # restore staged files matching regex
+    rsr = "!f() { git lsm | grep $1 | xargs -r git rs; }; f" # restore files matching regex
+    rssr = "!f() { git lss | grep $1 | xargs -r git rss; }; f" # restore staged files matching regex
 
     rv = revert
 
