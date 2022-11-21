@@ -25,6 +25,7 @@ return packer.startup(function(use)
     -- languages
     use { "hashivim/vim-terraform" }
     use { "udalov/kotlin-vim" }
+    use { "dag/vim-fish" }
 
     -- cmp
     use { "hrsh7th/nvim-cmp" }
