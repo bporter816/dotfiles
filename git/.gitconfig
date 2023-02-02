@@ -84,3 +84,5 @@
 	rebase = true
 [status]
     showUntrackedFiles = all
+[github]
+	user = bporter816
