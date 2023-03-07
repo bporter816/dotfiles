@@ -65,6 +65,8 @@
     rsr = "!f() { git lsm | grep $1 | xargs -r git rs; }; f" # restore files matching regex
     rssr = "!f() { git lss | grep $1 | xargs -r git rss; }; f" # restore staged files matching regex
 
+    rst = "!f() { git tag -d $(git tag -l); git pull --tags; }; f" # recreate tags
+
     rv = revert
 
     s = status
