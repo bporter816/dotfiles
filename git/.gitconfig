@@ -28,6 +28,8 @@
 
     db = "!f() { git remote show origin | grep 'HEAD branch' | awk '{print $NF}'; }; f" # get the default branch
 
+    dcb = "!f() { BRANCH=$(git branch --show-current); git chm; git branch -D $BRANCH; }; f" # delete the current branch and switch to the default branch
+
     d = diff
     ds = diff --staged
     dt = difftool
