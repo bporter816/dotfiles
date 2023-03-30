@@ -12,6 +12,7 @@
     aur = "!f() { git lsu | grep $1 | xargs -r git add; }; f" # add untracked files matching regex
 
     b = branch
+    bd = "!f() { git branch | awk '{print $NF}' | fzf --multi --preview 'git log --color=always {}' | xargs -r git branch -D; }; f" # delete branches with fzf
     br = "!f() { git branch | awk '{print $NF}' | fzf --preview 'git log --color=always {}' | xargs -r git checkout; }; f" # checkout branch with fzf
     bl = blame
 
