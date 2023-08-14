@@ -1,93 +1,93 @@
 [includeIf "gitdir:~/personal/"]
-    path = ~/personal/.gitconfig
+	path = ~/personal/.gitconfig
 
 [includeIf "gitdir:~/work/"]
-    path = ~/work/.gitconfig
+	path = ~/work/.gitconfig
 
 [alias]
-    a = add
-    aa = add --all
-    ar = "!f() { git lsd | grep $1 | xargs -r git add; }; f" # add files matching regex
-    amr = "!f() { git lsm | grep $1 | xargs -r git add; }; f" # add modified files matching regex
-    aur = "!f() { git lsu | grep $1 | xargs -r git add; }; f" # add untracked files matching regex
+	a = add
+	aa = add --all
+	ar = "!f() { git lsd | grep $1 | xargs -r git add; }; f" # add files matching regex
+	amr = "!f() { git lsm | grep $1 | xargs -r git add; }; f" # add modified files matching regex
+	aur = "!f() { git lsu | grep $1 | xargs -r git add; }; f" # add untracked files matching regex
 
-    b = branch
-    bd = "!f() { git branch | awk '{print $NF}' | fzf --multi --preview 'git log --color=always {}' | xargs -r git branch -D; }; f" # delete branches with fzf
-    br = "!f() { git branch | awk '{print $NF}' | fzf --preview 'git log --color=always {}' | xargs -r git checkout; }; f" # checkout branch with fzf
-    bl = blame
+	b = branch
+	bd = "!f() { git branch | awk '{print $NF}' | fzf --multi --preview 'git log --color=always {}' | xargs -r git branch -D; }; f" # delete branches with fzf
+	br = "!f() { git branch | awk '{print $NF}' | fzf --preview 'git log --color=always {}' | xargs -r git checkout; }; f" # checkout branch with fzf
+	bl = blame
 
-    c = commit
-    ca = commit --amend
-    caa = commit --amend --no-edit
-    cm = commit -m
+	c = commit
+	ca = commit --amend
+	caa = commit --amend --no-edit
+	cm = commit -m
 
-    ch = checkout
-    chb = checkout -b
-    chm = "!f() { git checkout $(git db); }; f" # checkout default branch
+	ch = checkout
+	chb = checkout -b
+	chm = "!f() { git checkout $(git db); }; f" # checkout default branch
 
-    cl = clone
+	cl = clone
 
-    db = "!f() { git remote show origin | grep 'HEAD branch' | awk '{print $NF}'; }; f" # get the default branch
+	db = "!f() { git remote show origin | grep 'HEAD branch' | awk '{print $NF}'; }; f" # get the default branch
 
-    dcb = "!f() { BRANCH=$(git branch --show-current); git chm; git branch -D $BRANCH; }; f" # delete the current branch and switch to the default branch
+	dcb = "!f() { BRANCH=$(git branch --show-current); git chm; git branch -D $BRANCH; }; f" # delete the current branch and switch to the default branch
 
-    d = diff
-    ds = diff --staged
-    dt = difftool
+	d = diff
+	ds = diff --staged
+	dt = difftool
 
-    l = log --oneline
-    ll = log
+	l = log --oneline
+	ll = log
 
 
-    lsc = diff --name-only --diff-filter=U # list files with conflicts
-    lsm = ls-files --modified --exclude-standard # list modified files
-    lsu = ls-files --others --exclude-standard # list untracked files
-    lsd = ls-files --modified --others --exclude-standard # list modified and untracked files
-    lss = diff --cached --name-only
+	lsc = diff --name-only --diff-filter=U # list files with conflicts
+	lsm = ls-files --modified --exclude-standard # list modified files
+	lsu = ls-files --others --exclude-standard # list untracked files
+	lsd = ls-files --modified --others --exclude-standard # list modified and untracked files
+	lss = diff --cached --name-only
 
-    pl = pull
+	pl = pull
 
-    pr = "!f() { gh pr list | fzf --preview 'gh pr view {1}' | awk '{print $1}' | xargs -r gh pr checkout; }; f" # checkout a github PR with fzf
-    prm = "!f() { gh pr list --author bporter816 | fzf --preview 'gh pr view {1}' | awk '{print $1}' | xargs -r gh pr checkout; }; f" # checkout a github PR with fzf
+	pr = "!f() { gh pr list | fzf --preview 'gh pr view {1}' | awk '{print $1}' | xargs -r gh pr checkout; }; f" # checkout a github PR with fzf
+	prm = "!f() { gh pr list --author bporter816 | fzf --preview 'gh pr view {1}' | awk '{print $1}' | xargs -r gh pr checkout; }; f" # checkout a github PR with fzf
 
-    ps = push
-    psu = push -u origin HEAD
+	ps = push
+	psu = push -u origin HEAD
 
-    rb = rebase
-    rbi = "!f() { git rebase -i HEAD~$1; }; f" # interactive rebase with the given number of commits
-    rba = "!f() { git rbi $(git rev-list --count HEAD ^$(git db)); }; f" # interactive rebase with all new commits on this branch
-    rbm = "!f() { git rebase $(git db); }; f" # rebase on the default branch
+	rb = rebase
+	rbi = "!f() { git rebase -i HEAD~$1; }; f" # interactive rebase with the given number of commits
+	rba = "!f() { git rbi $(git rev-list --count HEAD ^$(git db)); }; f" # interactive rebase with all new commits on this branch
+	rbm = "!f() { git rebase $(git db); }; f" # rebase on the default branch
 
-    re = reset
-    reh = reset HEAD
+	re = reset
+	reh = reset HEAD
 
-    rmr = "!f() { git lsu | grep $1 | xargs -r rm; }; f" # remove untracked files matching regex
+	rmr = "!f() { git lsu | grep $1 | xargs -r rm; }; f" # remove untracked files matching regex
 
-    rs = restore
-    rss = restore --staged
-    rsr = "!f() { git lsm | grep $1 | xargs -r git rs; }; f" # restore files matching regex
-    rssr = "!f() { git lss | grep $1 | xargs -r git rss; }; f" # restore staged files matching regex
+	rs = restore
+	rss = restore --staged
+	rsr = "!f() { git lsm | grep $1 | xargs -r git rs; }; f" # restore files matching regex
+	rssr = "!f() { git lss | grep $1 | xargs -r git rss; }; f" # restore staged files matching regex
 
-    rst = "!f() { git tag -d $(git tag -l); git pull --tags; }; f" # recreate tags
+	rst = "!f() { git tag -d $(git tag -l); git pull --tags; }; f" # recreate tags
 
-    rv = revert
+	rv = revert
 
-    s = status
+	s = status
 
-    st = stash
+	st = stash
 
-    wt = worktree
+	wt = worktree
 
 [core]
-    editor = nvim
+	editor = nvim
 	excludesfile = ~/.gitignore
 [difftool]
-    prompt = false
+	prompt = false
 [init]
-    defaultBranch = main
+	defaultBranch = main
 [pull]
 	rebase = true
 [status]
-    showUntrackedFiles = all
+	showUntrackedFiles = all
 [github]
 	user = bporter816
