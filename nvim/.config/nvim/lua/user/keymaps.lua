@@ -43,3 +43,4 @@ keymap("n", "<leader>e", ":Lexplore 30<CR>", opts) -- toggle file explorer
 keymap("n", "<leader>r", ":set relativenumber!<CR>", opts) -- toggle relativenumber
 keymap("n", "<leader>q", ":Explore<CR>", opts) -- open directory
 keymap("n", "<leader>nh", ":nohl<CR>", opts) -- turn off highlighting
+keymap("n", "x", '"_x', opts) -- don't put deleted characters in register
