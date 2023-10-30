@@ -10,6 +10,16 @@ return {
             local capabilities = cmp_nvim_lsp.default_capabilities()
             lspconfig["gopls"].setup({ capabilities = capabilities })
             lspconfig["terraformls"].setup({ capabilities = capabilities })
+            lspconfig["lua_ls"].setup({
+                capabilities = capabilities,
+                settings = {
+                    Lua = {
+                        diagnostics = {
+                            globals = {"vim"},
+                        },
+                    },
+                },
+            })
         end,
     },
 }
