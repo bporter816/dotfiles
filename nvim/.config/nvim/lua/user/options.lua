@@ -6,6 +6,7 @@ local options = {
     colorcolumn = "81,121",
     laststatus = 2, -- always show status line
     wrap = false,
+    showmode = false,
 
     termguicolors = true,
     background = "dark",
