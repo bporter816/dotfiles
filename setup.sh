@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 # Linux setup
 # sudo apt install stow
