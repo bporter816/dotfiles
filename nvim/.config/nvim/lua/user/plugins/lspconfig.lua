@@ -20,6 +20,9 @@ return {
                     },
                 },
             })
+            lspconfig["yamlls"].setup({ capabilities = capabilities })
+            lspconfig["pyright"].setup({ capabilities = capabilities })
+            lspconfig["bashls"].setup({ capabilities = capabilities })
         end,
     },
 }
