@@ -9,6 +9,7 @@ return {
                 "lua",
                 "hcl",
                 "go",
+                "bash",
             },
             highlight = {
                 enable = true,
