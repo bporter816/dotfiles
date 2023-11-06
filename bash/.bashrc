@@ -6,12 +6,6 @@ bind '"kj":vi-movement-mode'
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
-# basic aliases
-alias ls='ls --color=auto'
-alias ll='ls -al'
-alias vi='nvim'
-alias nvim='nvim'
-
 # environment
 export EDITOR='nvim'
 
@@ -72,3 +66,8 @@ function prompt_git_branch() {
 }
 
 PS1='$(prompt_exit_status)\u@$(green \h) $(blue \W)$(prompt_git_branch) $ '
+
+# source external configs
+for f in ~/.bash_config/*; do
+    source "$f"
+done
