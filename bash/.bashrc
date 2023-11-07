@@ -9,6 +9,11 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 # environment
 export EDITOR='nvim'
 
+# functions
+function hs() {
+    history | fzf | cut -c 8- | bash
+}
+
 # prompt
 function red() {
     tput setaf 1
