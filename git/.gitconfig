@@ -91,3 +91,7 @@
 	showUntrackedFiles = all
 [github]
 	user = bporter816
+[bash]
+    showDirtyState = true
+    showUntrackedFiles = true
+    showInformativeStatus = true
