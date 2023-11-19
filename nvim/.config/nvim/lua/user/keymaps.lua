@@ -39,7 +39,7 @@ keymap("n", "<leader>fb", ":Buffers<CR>", opts)
 keymap("n", "<leader>fr", ":Rg<CR>", opts)
 
 -- misc
-keymap("n", "<leader>e", ":Lexplore 30<CR>", opts) -- toggle file explorer
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts) -- toggle file explorer
 keymap("n", "<leader>r", ":set relativenumber!<CR>", opts) -- toggle relativenumber
 keymap("n", "<leader>q", ":Explore<CR>", opts) -- open directory
 keymap("n", "<leader>nh", ":nohl<CR>", opts) -- turn off highlighting
