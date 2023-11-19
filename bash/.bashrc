@@ -72,6 +72,8 @@ function prompt_git_branch() {
 
 PS1='$(prompt_exit_status)\u@$(green \h) $(blue \W)$(prompt_git_branch) $ '
 
+eval "$(zoxide init bash)"
+
 # source external configs
 for f in ~/.bash_config/*; do
     source "$f"
