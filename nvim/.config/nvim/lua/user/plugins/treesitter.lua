@@ -5,11 +5,12 @@ return {
         local configs = require("nvim-treesitter.configs")
         configs.setup({
             ensure_installed = {
-                "c",
-                "lua",
-                "hcl",
-                "go",
                 "bash",
+                "c",
+                "fish",
+                "go",
+                "hcl",
+                "lua",
             },
             highlight = {
                 enable = true,

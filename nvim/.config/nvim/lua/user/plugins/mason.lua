@@ -18,12 +18,12 @@ return {
             local mason_lspconfig = require("mason-lspconfig")
             mason_lspconfig.setup({
                 ensure_installed = {
-                    "gopls",
-                    "terraformls",
-                    "lua_ls",
-                    "yamlls",
-                    "pyright",
                     "bashls",
+                    "gopls",
+                    "lua_ls",
+                    "pyright",
+                    "terraformls",
+                    "yamlls",
                 },
             })
         end,
