@@ -1,17 +1,15 @@
 #!/bin/bash
 
-# Linux setup
-# sudo apt install stow
-# sudo apt install vim
-# sudo apt install git
-# sudo apt install zsh
-# sudo apt install fd-find
-# sudo apt install ripgrep
-# ln -s $(which fdfind) ~/.local/bin/fd
-
+echo "Linking dotfiles..."
 for i in *; do
     if [[ -d $i ]]; then
-        echo "Linking $i"
+        echo "    Linking $i"
         stow -t $HOME $i
     fi
+done
+
+echo "Installing brew formulae..."
+for i in $(cat brew_formulae); do
+    echo "    Installing $i"
+    brew install $i
 done
