@@ -1,5 +1,12 @@
 #!/bin/bash
 
+if command -v brew &> /dev/null; then
+    echo "brew is already installed"
+else
+    echo "brew not installed, installing..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
 echo "Linking dotfiles..."
 for i in *; do
     if [[ -d $i ]]; then
