@@ -7,11 +7,5 @@ if status is-interactive
     fish_vi_key_bindings
     bind -M insert -m default kj 'commandline -f repaint'
 
-    abbr -a g git
-    abbr -a k kubectl
-    abbr -a tf terraform
-    abbr -a tg terragrunt
-    abbr -a vi nvim
-
     zoxide init fish | source
 end
