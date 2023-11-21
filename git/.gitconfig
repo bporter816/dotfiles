@@ -95,3 +95,9 @@
     showDirtyState = true
     showUntrackedFiles = true
     showInformativeStatus = true
+[color]
+    ui = auto
+[color "status"]
+    added = green
+    changed = yellow
+    untracked = red
