@@ -8,6 +8,11 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 # environment
 export EDITOR='nvim'
+export BAT_THEME='gruvbox-dark'
+
+if command -v bat; then
+    alias cat='bat'
+fi
 
 # functions
 function hs() {
