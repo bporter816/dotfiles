@@ -4,6 +4,6 @@ abbr -a tf terraform
 abbr -a tg terragrunt
 abbr -a vi nvim
 
-if command -v bat
+if command -v bat > /dev/null 2>&1
     alias cat bat
 end
