@@ -3,8 +3,8 @@ set -o vi
 bind '"kj":vi-movement-mode'
 
 # nvm setup
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+export NVM_DIR="${HOME}/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
 
 # functions
 function hs() {
@@ -69,7 +69,9 @@ function prompt_git_branch() {
 
 PS1='$(prompt_exit_status)\u@$(green \h) $(blue \W)$(prompt_git_branch) $ '
 
-eval "$(zoxide init bash)"
+if command -v zoxide > /dev/null 2>&1; then
+    eval "$(zoxide init bash)"
+fi
 
 # source external configs
 for f in ~/.bash_config/*; do
