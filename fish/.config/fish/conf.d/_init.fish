@@ -1,4 +1,3 @@
-echo 'config.fish'
 set -g fish_greeting
 
 fish_add_path /opt/homebrew/bin

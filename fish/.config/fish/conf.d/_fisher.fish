@@ -1,4 +1,3 @@
-echo 'fisher.fish'
 # Plugins are usually installed alongside user config.
 # This puts them in a separate directory so they can be gitignored.
 set fisher_path ~/.config/fisher
