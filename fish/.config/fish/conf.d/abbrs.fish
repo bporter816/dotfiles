@@ -7,3 +7,7 @@ abbr -a vi nvim
 if command -v bat > /dev/null 2>&1
     alias cat bat
 end
+
+if command -v eza > /dev/null 2>&1
+    alias ls 'eza --icons --git'
+end
