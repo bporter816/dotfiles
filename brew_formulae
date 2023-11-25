@@ -6,5 +6,6 @@ git
 gh
 jq
 neovim
+pyenv
 ripgrep
 zoxide
