@@ -35,6 +35,8 @@
 	ds = diff --staged
 	dt = difftool
 
+	hs = log --full-history --
+
 	l = log --oneline
 	ll = log
 
@@ -92,12 +94,12 @@
 [github]
 	user = bporter816
 [bash]
-    showDirtyState = true
-    showUntrackedFiles = true
-    showInformativeStatus = true
+	showDirtyState = true
+	showUntrackedFiles = true
+	showInformativeStatus = true
 [color]
-    ui = auto
+	ui = auto
 [color "status"]
-    added = green
-    changed = yellow
-    untracked = red
+	added = green
+	changed = yellow
+	untracked = red
