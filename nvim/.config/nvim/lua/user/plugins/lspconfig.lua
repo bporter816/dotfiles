@@ -23,6 +23,7 @@ return {
             lspconfig["yamlls"].setup({ capabilities = capabilities })
             lspconfig["pyright"].setup({ capabilities = capabilities })
             lspconfig["bashls"].setup({ capabilities = capabilities })
+            lspconfig["tsserver"].setup({ capabilities = capabilities })
 
             vim.keymap.set("n", "<leader>dk", vim.diagnostic.goto_prev)
             vim.keymap.set("n", "<leader>dj", vim.diagnostic.goto_next)
