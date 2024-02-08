@@ -1,4 +1,6 @@
+awscli
 bat
+coreutils
 eza
 fd
 fish
@@ -9,4 +11,7 @@ jq
 neovim
 pyenv
 ripgrep
+stow
+tfenv
+tgenv
 zoxide
