@@ -13,13 +13,6 @@ mkdir -p ~/.config/fisher/{completions,functions}/
 ln -s ~/personal/fisher/completions/fisher.fish ~/.config/fisher/completions/fisher.fish
 ln -s ~/personal/fisher/functions/fisher.fish ~/.config/fisher/functions/fisher.fish
 
-if [ -d ~/.nvm/ ]; then
-    echo "nvm is already installed"
-else
-    echo "Installing nvm..."
-    PROFILE=/dev/null bash -c 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash'
-fi
-
 if command -v brew &> /dev/null; then
     echo "brew is already installed"
 else
@@ -27,16 +20,16 @@ else
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
+echo "Installing brew formulae..."
+for i in $(cat brew_formulae); do
+    echo "    Installing $i"
+    brew install $i
+done
+
 echo "Linking dotfiles..."
 for i in *; do
     if [[ -d $i ]]; then
         echo "    Linking $i"
         stow -t $HOME $i
     fi
-done
-
-echo "Installing brew formulae..."
-for i in $(cat brew_formulae); do
-    echo "    Installing $i"
-    brew install $i
 done
