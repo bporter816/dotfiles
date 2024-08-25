@@ -3,10 +3,10 @@ return {
 	build = ":TSUpdate",
 	opts = {
 		ensure_installed = {
-			"terraform",
 			"hcl",
 			"lua",
 			"luadoc",
+			"terraform",
 			"vim",
 			"vimdoc",
 		},

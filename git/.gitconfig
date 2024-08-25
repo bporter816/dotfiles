@@ -103,3 +103,6 @@
 	added = green
 	changed = yellow
 	untracked = red
+[user]
+	name = Benjamin Porter
+	email = bporter816@gmail.com
