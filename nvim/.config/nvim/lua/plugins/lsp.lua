@@ -14,6 +14,7 @@ return {
 				"gopls",
 				"pyright",
 				"terraformls",
+				"ts_ls",
 			},
 		},
 	},
@@ -38,11 +39,13 @@ return {
 			lspconfig.gopls.setup({ capabilities = capabilities })
 			lspconfig.pyright.setup({ capabilities = capabilities })
 			lspconfig.terraformls.setup({ capabilities = capabilities })
+			lspconfig.ts_ls.setup({ capabilities = capabilities })
 
 			vim.keymap.set("n", "<leader>lh", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "<leader>ld", vim.lsp.buf.definition, {})
 			vim.keymap.set("n", "<leader>lr", vim.lsp.buf.references, {})
 			vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action, {})
+			vim.keymap.set("n", "<leader>ln", vim.lsp.buf.rename, {})
 		end,
 	},
 }
