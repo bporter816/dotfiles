@@ -1,13 +1,17 @@
+local js_settings = { "biome", "prettier", stop_after_first = true }
+
 return {
 	{
 		"stevearc/conform.nvim",
 		config = function()
 			require("conform").setup({
 				formatters_by_ft = {
+					hcl = { "terragrunt_hclfmt" },
+					javascript = js_settings,
 					lua = { "stylua" },
 					python = { "isort", "black" },
 					tf = { "terraform_fmt" },
-					hcl = { "terragrunt_hclfmt" },
+					typescript = js_settings,
 				},
 				format_on_save = function(bufnr)
 					-- Disable with a global or buffer-local variable
