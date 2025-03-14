@@ -1,0 +1,9 @@
+theme = "sonokai_transparent"
+
+[keys.normal]
+S-g = "goto_last_line"
+Z = { Z = ":write-quit-all" }
+
+
+[keys.insert]
+k = { j = "normal_mode" }
