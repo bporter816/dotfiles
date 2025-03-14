@@ -21,9 +21,14 @@ else
 fi
 
 echo "Installing brew formulae..."
+formulae=$(brew ls)
 for i in $(cat brew_formulae); do
-    echo "    Installing $i"
-    brew install $i
+    if rg -q $i <<< $formulae; then
+		echo "    $i already installed"
+    else
+        echo "    Installing $i"
+        brew install $i
+    fi
 done
 
 echo "Linking dotfiles..."
