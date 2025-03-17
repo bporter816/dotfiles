@@ -4,6 +4,7 @@ local options = {
   relativenumber = true,
   cursorline = true,
   termguicolors = true, -- needed for bufferline
+  cmdheight = 0,
 
   -- splits
   splitright = true,
