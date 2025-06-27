@@ -12,6 +12,7 @@
 	aur = "!f() { git lsu | grep $1 | xargs -r git add; }; f" # add untracked files matching regex
 
 	b = branch
+	bc = rev-parse --abbrev-ref HEAD # current branch
 	bd = "!f() { git branch | awk '{print $NF}' | fzf --multi --preview 'git log --color=always {}' | xargs -r git branch -D; }; f" # delete branches with fzf
 	br = "!f() { git branch | awk '{print $NF}' | fzf --preview 'git log --color=always {}' | xargs -r git checkout; }; f" # checkout branch with fzf
 	bl = blame
@@ -27,13 +28,17 @@
 
 	cl = clone
 
-	db = "!f() { git remote show origin | grep 'HEAD branch' | awk '{print $NF}'; }; f" # get the default branch
+	db = "!f() { git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'; }; f" # get the default branch
+	dm = "!f() { gh pr list --state merged --author @me --json headRefName --jq '.[] | .headRefName' | xargs -n 1 git branch -D 2>/dev/null; }; f" # delete merged branches
 
 	dcb = "!f() { BRANCH=$(git branch --show-current); git chm; git branch -D $BRANCH; }; f" # delete the current branch and switch to the default branch
 
 	d = diff
 	ds = diff --staged
 	dt = difftool
+
+	fetch-default = "!f() { git fetch origin $(git db):$(git db); }; f"
+	fd = fetch-default
 
 	hs = log --full-history --
 
@@ -80,6 +85,18 @@
 
 	wt = worktree
 
+	# stacking
+	default-branch = "!git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'"
+	merge-base-origin ="!f() { git merge-base ${1-HEAD} origin/$(git default-branch); };f "
+	stack = "!f() { \
+		BRANCH=${1-HEAD}; \
+		MERGE_BASE=$(git merge-base-origin $BRANCH); \
+		git log --decorate-refs=refs/heads --simplify-by-decoration --pretty=format:\"%(decorate:prefix=,suffix=,tag=,separator=%n)\" $MERGE_BASE..$BRANCH; \
+	};f "
+	push-stack = "!f() { \
+		BRANCH=${1-HEAD}; \
+		git stack $BRANCH | xargs -I {} git push --force-with-lease origin {}; \
+	};f "
 [core]
 	editor = nvim
 	excludesfile = ~/.gitignore
