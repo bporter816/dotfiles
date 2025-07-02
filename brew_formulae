@@ -10,8 +10,6 @@ gh
 git
 jq
 neovim
-nvm
-pyenv
 ripgrep
 stow
 tfenv
