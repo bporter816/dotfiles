@@ -1,3 +1,4 @@
+asdf
 awscli
 bat
 coreutils
@@ -5,8 +6,8 @@ eza
 fd
 fish
 fzf
-git
 gh
+git
 jq
 neovim
 nvm
