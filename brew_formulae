@@ -11,6 +11,7 @@ git
 jq
 neovim
 ripgrep
+shellcheck
 stow
 tfenv
 tgenv

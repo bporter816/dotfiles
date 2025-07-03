@@ -11,20 +11,20 @@ fi
 
 echo "Installing brew formulae"
 formulae=$(brew ls)
-for i in $(cat brew_formulae); do
-	if rg -q $i <<<$formulae; then
-		echo "    $i already installed"
+while read -r line; do
+	if rg -q "$line" <<<"$formulae"; then
+		echo "    $line already installed"
 	else
-		echo "    Installing $i"
-		brew install $i
+		echo "    Installing $line"
+		brew install "$line"
 	fi
-done
+done <brew_formulae
 
 echo "Linking dotfiles"
 for i in *; do
 	if [[ -d $i ]]; then
 		echo "    Linking $i"
-		stow -t $HOME $i
+		stow -t "$HOME" "$i"
 	fi
 done
 
